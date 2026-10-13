@@ -14,6 +14,9 @@ builder.Services.AddControllers();
 // OpenAPI con botón "Authorize" (Bearer JWT)
 builder.Services.AddOpenApi(options =>
 {
+    // OpenAPI 3.0: evita el tipo "integer | string" que rompe Swagger UI
+    options.OpenApiVersion = OpenApiSpecVersion.OpenApi3_0;
+
     options.AddDocumentTransformer((document, context, ct) =>
     {
         document.Components ??= new OpenApiComponents();
