@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MiProyectoApi.Models;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,13 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
+
+    // Swagger UI leyendo el documento OpenAPI generado por .NET
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "FitTrack API v1");
+    });
 }
 
 app.UseHttpsRedirection();
