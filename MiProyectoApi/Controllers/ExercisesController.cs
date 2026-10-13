@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MiProyectoApi.Dtos;
 using MiProyectoApi.Models;
@@ -48,6 +49,7 @@ public class ExercisesController : ControllerBase
     }
 
     // POST api/exercises
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<EjercicioDto>> Create(EjercicioGuardarDto dto)
     {
@@ -71,6 +73,7 @@ public class ExercisesController : ControllerBase
     }
 
     // PUT api/exercises/5
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, EjercicioGuardarDto dto)
     {
@@ -86,6 +89,7 @@ public class ExercisesController : ControllerBase
     }
 
     // DELETE api/exercises/5
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
