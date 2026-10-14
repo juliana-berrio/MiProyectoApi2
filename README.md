@@ -22,7 +22,7 @@ Autores: Juliana Arboleda Berrio, Miguel Ángel Quintero Quiroz.
 
 1. Clonar el repositorio:
 ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/juliana-berrio/MiProyectoApi2.git
    cd MiProyectoApi2
 ```
 2. Crear la base de datos: abrir `Database/01_schema.sql` en SSMS y ejecutarlo completo.
